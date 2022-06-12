@@ -89,13 +89,13 @@ const rgblight_segment_t PROGMEM NAV_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     {46, 6, 225, 255, 255},
     {52, 6, 210, 255, 255},
     {58, 1, 201, 255, 255},
-    {59, 1, 43, 255, 255}, // TO(_MOUSE_MEDIA)
+    {59, 1, 43, 255, 255}, // TO(_MOUSE)
     {60, 2, 201, 255, 255},
     {62, 3, 201, 255, 255}, // underglow
     {65, 3, 248, 255, 255} // underglow
 );
 
-const rgblight_segment_t PROGMEM MOUSE_MEDIA_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM MOUSE_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     // left side
     {0, 6, 4, 255, 255},
     {6, 6, 10, 255, 255},
@@ -138,6 +138,6 @@ const rgblight_segment_t* const PROGMEM MY_LIGHT_LAYERS[] = RGBLIGHT_LAYERS_LIST
     COLEMAK_LIGHT_LAYER,
     NUM_SYM_LIGHT_LAYER,
     NAV_LIGHT_LAYER,
-    MOUSE_MEDIA_LIGHT_LAYER,
+    MOUSE_LIGHT_LAYER,
     DANGER_LIGHT_LAYER
 );
