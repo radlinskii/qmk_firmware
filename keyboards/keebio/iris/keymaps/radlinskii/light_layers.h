@@ -141,16 +141,19 @@ const rgblight_segment_t PROGMEM MOUSE_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
 
 const rgblight_segment_t PROGMEM DANGER_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     // both sides
-    {0, 1, 180, 255, 255}, // RESET
-    {1, 4, 0, 255, 255},
+    {0, 1, 0, 255, 255}, // RESET
+    {1, 4, 0, 0, 0},
     {5, 1, 127, 255, 255}, // set QWERTY as default
-    {6, 19, 0, 255, 255},
-    {25, 1, 85, 255, 255}, // TO(_QWERTY)
-    {26, 13, 0, 255, 255},
+    {6, 19, 0, 0, 0},
+    {25, 1, 85, 255, 255}, // TO(DEFAULT)
+    {26, 2, 0, 0, 0},
+    {28, 6, 0, 255, 255}, // underglow
+    {34, 5, 0, 0, 0},
     {39, 1, 85, 0, 255}, // set COLEMAK as default
-    {40, 19, 0, 255, 255},
+    {40, 19, 0, 0, 0},
     {59, 1, 85, 255, 255}, // TO(DEFAULT)
-    {60, 8, 0, 255, 255} // including right side underglow
+    {60, 2, 0, 0, 0},
+    {62, 6, 0, 255, 255} // underglow
 );
 
 const rgblight_segment_t* const PROGMEM MY_LIGHT_LAYERS[] = RGBLIGHT_LAYERS_LIST(
