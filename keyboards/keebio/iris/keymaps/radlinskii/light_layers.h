@@ -23,7 +23,7 @@ LED index mapping:
 
 */
 
-const rgblight_segment_t PROGMEM QWERTY_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM COLEMAK_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     // left side
     {0, 6, 127, 255, 255},
     {6, 6, 115, 255, 255},
@@ -46,7 +46,7 @@ const rgblight_segment_t PROGMEM QWERTY_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     {65, 3, 127, 255, 255} // underglow
 );
 
-const rgblight_segment_t PROGMEM COLEMAK_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM QWERTY_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     // left side
     {0, 6, 85, 0, 255},
     {6, 6, 85, 70, 255},
@@ -143,7 +143,7 @@ const rgblight_segment_t PROGMEM MISC_MEDIA_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGME
     // both sides
     {0, 1, 0, 255, 255}, // RESET
     {1, 4, 0, 0, 0},
-    {5, 1, 127, 255, 255}, // set QWERTY as default
+    {5, 1, 85, 0, 255}, // set QWERTY as default
     {6, 2, 0, 0, 0},
     {8, 1, 160, 150, 150}, // MUTE
     {9, 3, 0, 0, 0},
@@ -162,7 +162,7 @@ const rgblight_segment_t PROGMEM MISC_MEDIA_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGME
     {26, 2, 0, 0, 0},
     {28, 6, 0, 255, 255}, // underglow
     {34, 5, 0, 0, 0},
-    {39, 1, 85, 0, 255}, // set COLEMAK as default
+    {39, 1, 127, 255, 255}, // set COLEMAK as default
     {40, 19, 0, 0, 0},
     {59, 1, 85, 255, 255}, // TO(DEFAULT)
     {60, 2, 0, 0, 0},
@@ -170,8 +170,8 @@ const rgblight_segment_t PROGMEM MISC_MEDIA_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGME
 );
 
 const rgblight_segment_t* const PROGMEM MY_LIGHT_LAYERS[] = RGBLIGHT_LAYERS_LIST(
-    QWERTY_LIGHT_LAYER,
     COLEMAK_LIGHT_LAYER,
+    QWERTY_LIGHT_LAYER,
     NUM_SYM_LIGHT_LAYER,
     NAV_LIGHT_LAYER,
     MOUSE_LIGHT_LAYER,

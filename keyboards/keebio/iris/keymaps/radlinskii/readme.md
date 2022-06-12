@@ -10,26 +10,7 @@
 
 ## Layers:
 
-### qwerty - default
-
-<details>
-    <summary>
-        keymap
-    </summary>
-
-<img width="800" alt="qwerty layer keymap" src="https://user-images.githubusercontent.com/26116041/171701004-1f5783c0-219d-4bb2-9be9-757904d7d4c9.png">
-
-</details>
-<details>
-    <summary>
-        lightning
-    </summary>
-
-<img width="800" alt="qwerty layer lightning" src="https://user-images.githubusercontent.com/26116041/171883713-8d307328-d738-49ad-a35d-9e4475e012ed.png">
-    
-</details>
-
-### colemak - alternative default
+### colemak - default
 
 > [Colemak DH](https://colemakmods.github.io/mod-dh/) keyboard layout. Can be set as persistent default layer.
 
@@ -46,8 +27,27 @@
         lightning
     </summary>
 
-<img width="800" alt="colemak layer lightning" src="https://user-images.githubusercontent.com/26116041/171884040-cf9b697b-c254-46aa-bbff-0e1cbd4959e0.png">
+<img width="800" alt="colemak layer lightning" src="https://user-images.githubusercontent.com/26116041/171883713-8d307328-d738-49ad-a35d-9e4475e012ed.png">
 
+</details>
+
+### qwerty - alternative default
+
+<details>
+    <summary>
+        keymap
+    </summary>
+
+<img width="800" alt="qwerty layer keymap" src="https://user-images.githubusercontent.com/26116041/171701004-1f5783c0-219d-4bb2-9be9-757904d7d4c9.png">
+
+</details>
+<details>
+    <summary>
+        lightning
+    </summary>
+
+<img width="800" alt="qwerty layer lightning" src="https://user-images.githubusercontent.com/26116041/171884040-cf9b697b-c254-46aa-bbff-0e1cbd4959e0.png">
+    
 </details>
 
 ### numeric + symbols
@@ -90,9 +90,7 @@
 
 </details>
 
-### mouse + media
-
-> Miscellaneous media keys and mouse navigation on the same keys as arrows.
+### mouse
 
 <details>
     <summary>
@@ -111,9 +109,9 @@
 
 </details>
 
-### danger
+### miscellaneous media
 
-> Used for keyboard reset and switching default layers.
+> Used for media keys, switching default layer and keyboard reset.
 
 <details>
     <summary>

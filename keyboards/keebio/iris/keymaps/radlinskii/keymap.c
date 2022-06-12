@@ -6,8 +6,8 @@
 #include "light_layers.h"
 
 enum my_layers {
-    _QWERTY,
     _COLEMAK,
+    _QWERTY,
     _NUM_SYM,
     _NAV,
     _MOUSE,
@@ -15,8 +15,8 @@ enum my_layers {
 };
 
 enum custom_keycodes {
-    QWERTY = SAFE_RANGE,
-    COLEMAK,
+    COLEMAK = SAFE_RANGE,
+    QWERTY,
     DEFAULT
 };
 
@@ -60,6 +60,21 @@ enum custom_keycodes {
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [_COLEMAK] = LAYOUT(
+  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
+     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     XXXXXXX, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, XXXXXXX,
+  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
+     XXXXXXX, LALT_KA, LCTL_KR, LGUI_KS, LSFT_KT, KC_G,                               KC_M,    RSFT_KN, RGUI_KE, RCTL_KI, RALT_KO, KC_QUOT,
+  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
+     XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_DEL,           KC_ESC,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, XXXXXXX,
+  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
+                                    KC_BSPC, TT_N_S,  KC_ENT,                     KC_SPC, TT_NAV,  KC_TAB
+                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
+  ),
+
+
     [_QWERTY] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
         KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,   KC_7,    KC_8,    KC_9,    KC_0,    KC_GRV,
@@ -74,19 +89,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
-      [_COLEMAK] = LAYOUT(
-  //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, KC_Q,    KC_W,    KC_F,    KC_P,    KC_B,                               KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, XXXXXXX,
-  //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, LALT_KA, LCTL_KR, LGUI_KS, LSFT_KT, KC_G,                               KC_M,    RSFT_KN, RGUI_KE, RCTL_KI, RALT_KO, KC_QUOT,
-  //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-     XXXXXXX, KC_Z,    KC_X,    KC_C,    KC_D,    KC_V,    KC_DEL,           KC_ESC,  KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, XXXXXXX,
-  //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_BSPC, TT_N_S,  KC_ENT,                     KC_SPC, TT_NAV,  KC_TAB
-                                // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
-  ),
 
     [_NUM_SYM] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
@@ -150,8 +152,8 @@ void keyboard_post_init_user(void) {
 }
 
 layer_state_t default_layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(_QWERTY, layer_state_cmp(state, _QWERTY));
     rgblight_set_layer_state(_COLEMAK, layer_state_cmp(state, _COLEMAK));
+    rgblight_set_layer_state(_QWERTY, layer_state_cmp(state, _QWERTY));
 
     return state;
 }
@@ -167,22 +169,24 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case QWERTY:
-            if (record->event.pressed) {
-                set_single_persistent_default_layer(_QWERTY);
-            }
-            return false;
         case COLEMAK:
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_COLEMAK);
+                layer_move(_COLEMAK);
+            }
+            return false;
+        case QWERTY:
+            if (record->event.pressed) {
+                set_single_persistent_default_layer(_QWERTY);
+                layer_move(_QWERTY);
             }
             return false;
         case DEFAULT:
             if (record->event.pressed) {
-                if (layer_state_cmp(default_layer_state, _QWERTY)) {
-                    layer_move(_QWERTY);
-                } else if (layer_state_cmp(default_layer_state, _COLEMAK)) {
+                if (layer_state_cmp(default_layer_state, _COLEMAK)) {
                     layer_move(_COLEMAK);
+                } else if (layer_state_cmp(default_layer_state, _QWERTY)) {
+                    layer_move(_QWERTY);
                 }
             }
             return false;
