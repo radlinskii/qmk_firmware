@@ -129,7 +129,7 @@ const rgblight_segment_t PROGMEM MOUSE_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     // right side
     {34, 6, 4, 255, 255},
     {40, 6, 10, 255, 255},
-    {46, 1, 0, 255, 255}, // TO(_DANGER)
+    {46, 1, 0, 255, 255}, // TO(_MISC_MEDIA)
     {47, 5, 25, 255, 255},
     {52, 6, 40, 255, 255},
     {58, 1, 43, 255, 255},
@@ -139,12 +139,25 @@ const rgblight_segment_t PROGMEM MOUSE_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     {65, 3, 4, 255, 255} // underglow
 );
 
-const rgblight_segment_t PROGMEM DANGER_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
+const rgblight_segment_t PROGMEM MISC_MEDIA_LIGHT_LAYER[] = RGBLIGHT_LAYER_SEGMENTS(
     // both sides
     {0, 1, 0, 255, 255}, // RESET
     {1, 4, 0, 0, 0},
     {5, 1, 127, 255, 255}, // set QWERTY as default
-    {6, 19, 0, 0, 0},
+    {6, 2, 0, 0, 0},
+    {8, 1, 160, 150, 150}, // MUTE
+    {9, 3, 0, 0, 0},
+    {12, 1, 201, 255, 255}, // CAPS
+    {13, 1, 120, 255, 255}, // PLAY
+    {14, 1, 0, 255, 255}, // NEXT
+    {15, 1, 160, 255, 255}, // VOLUME_UP
+    {16, 1, 43, 255, 255}, // BRIGHTNESS_UP
+    {17, 2, 0, 0, 0},
+    {19, 1, 43, 200, 200}, // BRIGHTNESS_DOWN
+    {20, 1, 160, 220, 200}, // VOLUME_DOWN
+    {21, 1, 0, 220, 200}, // PREV
+    {22, 1, 120, 220, 200}, // STOP
+    {23, 2, 0, 0, 0},
     {25, 1, 85, 255, 255}, // TO(DEFAULT)
     {26, 2, 0, 0, 0},
     {28, 6, 0, 255, 255}, // underglow
@@ -162,5 +175,5 @@ const rgblight_segment_t* const PROGMEM MY_LIGHT_LAYERS[] = RGBLIGHT_LAYERS_LIST
     NUM_SYM_LIGHT_LAYER,
     NAV_LIGHT_LAYER,
     MOUSE_LIGHT_LAYER,
-    DANGER_LIGHT_LAYER
+    MISC_MEDIA_LIGHT_LAYER
 );
