@@ -11,7 +11,7 @@ enum my_layers {
     _NUM_SYM,
     _NAV,
     _MOUSE,
-    _MISC_MEDIA,
+    _MEDIA_MISC,
 };
 
 enum custom_keycodes {
@@ -54,9 +54,8 @@ enum custom_keycodes {
 #define TO_QWRT TO(_QWERTY)
 #define TO_N_S TO(_NUM_SYM)
 #define TO_NAV TO(_NAV)
-#define TO_MICE TO(_MOUSE)
-#define TO_M_M TO(_MISC_MEDIA)
-
+#define TO_MOUSE TO(_MOUSE)
+#define TO_M_M TO(_MEDIA_MISC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT(
@@ -113,7 +112,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
         _______, _______, _______, _______, _______, _______, _______,          _______, _______, _______, _______, _______, _______, _______,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    _______, DEFAULT, _______,                   _______, TO_MICE,  _______
+                                    _______, DEFAULT, _______,                   _______, TO_MOUSE, _______
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
@@ -131,7 +130,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
     ),
 
-    [_MISC_MEDIA] = LAYOUT(
+    [_MEDIA_MISC] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        RESET,   _______, _______, _______, _______, QWERTY,                             COLEMAK, _______, _______, _______, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
@@ -161,7 +160,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(_NUM_SYM, layer_state_cmp(state, _NUM_SYM));
     rgblight_set_layer_state(_NAV, layer_state_cmp(state, _NAV));
     rgblight_set_layer_state(_MOUSE, layer_state_cmp(state, _MOUSE));
-    rgblight_set_layer_state(_MISC_MEDIA, layer_state_cmp(state, _MISC_MEDIA));
+    rgblight_set_layer_state(_MEDIA_MISC, layer_state_cmp(state, _MEDIA_MISC));
 
     return state;
 }
