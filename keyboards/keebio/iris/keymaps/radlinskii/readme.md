@@ -12,7 +12,7 @@
 
 ### colemak - default
 
-> [Colemak DH](https://colemakmods.github.io/mod-dh/) keyboard layout. Can be set as persistent default layer.
+> [Colemak DH](https://colemakmods.github.io/mod-dh/) keyboard layout.
 
 <details>
     <summary>
@@ -32,6 +32,8 @@
 </details>
 
 ### qwerty - alternative default
+
+> Can be set as persistent default layer.
 
 <details>
     <summary>
@@ -92,12 +94,14 @@
 
 ### mouse
 
+> Layer with mouse navigation on the same keys as arrow navigation.
+
 <details>
     <summary>
         keymap
     </summary>
 
-<img width="800" alt="mouse and media layer keymap" src="https://user-images.githubusercontent.com/26116041/171701095-a856c7b7-379b-4a4a-beac-845ad80e2f55.png">
+<img width="800" alt="mouse layer keymap" src="https://user-images.githubusercontent.com/26116041/171701095-a856c7b7-379b-4a4a-beac-845ad80e2f55.png">
 
 </details>
 <details>
@@ -105,11 +109,11 @@
         lightning
     </summary>
 
-<img width="800" alt="mouse and media layer lightning" src="https://user-images.githubusercontent.com/26116041/171884410-599b8ab8-d896-44e8-8fd4-5918c2338edd.png">
+<img width="800" alt="mouse layer lightning" src="https://user-images.githubusercontent.com/26116041/171884410-599b8ab8-d896-44e8-8fd4-5918c2338edd.png">
 
 </details>
 
-### miscellaneous media
+### media and miscellaneous
 
 > Used for media keys, switching default layer and keyboard reset.
 
@@ -118,7 +122,7 @@
         keymap
     </summary>
 
-<img width="800" alt="danger layer keymap" src="https://user-images.githubusercontent.com/26116041/171701128-3f66dcaf-c093-4984-983e-1b2c778600b6.png">
+<img width="800" alt="media and miscellaneous layer keymap" src="https://user-images.githubusercontent.com/26116041/171701128-3f66dcaf-c093-4984-983e-1b2c778600b6.png">
 
 </details>
 <details>
@@ -126,6 +130,6 @@
         lightning
     </summary>
 
-<img width="800" alt="numeric and symbols layer lightning" src="https://user-images.githubusercontent.com/26116041/171884421-515ff641-340e-4661-be17-526a1133037f.png">
+<img width="800" alt="media and miscellaneous layer lightning" src="https://user-images.githubusercontent.com/26116041/173398173-c6f4e658-29ab-4bef-bbf0-30b7bcb99119.jpeg">
 
 </details>
