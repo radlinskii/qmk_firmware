@@ -19,7 +19,7 @@
         keymap
     </summary>
 
-<img width="800" alt="colemak layer keymap" src="https://user-images.githubusercontent.com/26116041/171701020-58efa9f6-ed5c-457c-a96a-8c47822e9de5.png">
+<img width="800" alt="colemak layer keymap" src="https://user-images.githubusercontent.com/26116041/173403537-f2222651-c8ea-4c8b-b828-97520a222344.png">
 
 </details>
 <details>
@@ -40,7 +40,7 @@
         keymap
     </summary>
 
-<img width="800" alt="qwerty layer keymap" src="https://user-images.githubusercontent.com/26116041/171701004-1f5783c0-219d-4bb2-9be9-757904d7d4c9.png">
+<img width="800" alt="qwerty layer keymap" src="https://user-images.githubusercontent.com/26116041/173403371-1551976a-2f95-4dbd-ba07-96936651871d.png">
 
 </details>
 <details>
@@ -59,7 +59,7 @@
         keymap
     </summary>
 
-<img width="800" alt="numeric and symbols layer keymap" src="https://user-images.githubusercontent.com/26116041/171701041-7a93c6f5-ff83-4411-b2c1-38e8b9683b97.png">
+<img width="800" alt="numeric and symbols layer keymap" src="https://user-images.githubusercontent.com/26116041/173403164-b0520501-761b-4567-bf04-57f7b6f7dd4d.png">
 
 </details>
 <details>
@@ -101,7 +101,7 @@
         keymap
     </summary>
 
-<img width="800" alt="mouse layer keymap" src="https://user-images.githubusercontent.com/26116041/171701095-a856c7b7-379b-4a4a-beac-845ad80e2f55.png">
+<img width="800" alt="mouse layer keymap" src="https://user-images.githubusercontent.com/26116041/173402955-050ffd77-7b60-45dc-8e89-54cd43793132.png">
 
 </details>
 <details>
@@ -122,7 +122,7 @@
         keymap
     </summary>
 
-<img width="800" alt="media and miscellaneous layer keymap" src="https://user-images.githubusercontent.com/26116041/171701128-3f66dcaf-c093-4984-983e-1b2c778600b6.png">
+<img width="800" alt="media and miscellaneous layer keymap" src="https://user-images.githubusercontent.com/26116041/173402837-75ce8ab1-7fbe-454b-b165-b22d171f9ad1.png">
 
 </details>
 <details>
