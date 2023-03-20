@@ -54,4 +54,6 @@
             "url": "./data/schemas/keymap.jsonschema"
         }
     ]
+    "git.autoRepositoryDetection": false,
+    "editor.wordWrap": "off"
 }
