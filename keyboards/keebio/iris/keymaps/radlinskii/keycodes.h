@@ -49,7 +49,7 @@ enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY };
 #define MO_SYM MO(_SYM)
 #define MO_NAV MO(_NAV)
 #define MS_ENT LT(_MOUSE, KC_ENT)
-#define MF_TAB LT(_MEDIA_FN, KC_TAB)
+#define NUM_TAB LT(_NUM, KC_TAB)
 
 // Tap Dance Declarations
 enum { Q_ES = 0 };
