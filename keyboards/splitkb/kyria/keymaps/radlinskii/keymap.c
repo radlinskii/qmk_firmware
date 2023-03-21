@@ -4,7 +4,6 @@
 #include QMK_KEYBOARD_H
 #include "keycodes.h"
 #include "layer_names.h"
-#include "light_layers.h"
 #include "oled.h"
 
 // clang-format off
@@ -95,6 +94,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
+// adjust tapping term for Q / Esc
+
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case TD(Q_ES):
@@ -124,26 +125,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-// RGB light layers
-
-void keyboard_post_init_user(void) {
-    rgblight_layers = MY_LIGHT_LAYERS;
-}
-
-layer_state_t default_layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(_COLEMAK, layer_state_cmp(state, _COLEMAK));
-    rgblight_set_layer_state(_QWERTY, layer_state_cmp(state, _QWERTY));
-
-    return state;
-}
+// tri-layer feature for switching to _MEDIA_FN layer
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    rgblight_set_layer_state(_SYM, layer_state_cmp(state, _SYM));
-    rgblight_set_layer_state(_NAV, layer_state_cmp(state, _NAV));
-    rgblight_set_layer_state(_NUM, layer_state_cmp(state, _NUM));
-    rgblight_set_layer_state(_MOUSE, layer_state_cmp(state, _MOUSE));
-    rgblight_set_layer_state(_MEDIA_FN, layer_state_cmp(state, _MEDIA_FN));
-
     return update_tri_layer_state(state, _SYM, _NAV, _MEDIA_FN);
 }
 
