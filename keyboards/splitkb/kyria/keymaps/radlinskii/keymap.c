@@ -17,7 +17,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┬────────┐                 ┌────────┬────────┼────────┼────────┼────────┼────────┼────────┼────────┤
         XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_D,    KC_V, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
     //└────────┴────────┴────────┼────────┼────────┼────────┼────────┼────────┤                 ├────────┼────────┼────────┼────────┼────────┼────────┴────────┴────────┘
-                                   XXXXXXX, KC_BSPC,  MO_NAV,  MS_ENT, XXXXXXX,                   XXXXXXX,  KC_SPC,  MO_SYM, MF_TAB, XXXXXXX
+                                   XXXXXXX, KC_BSPC,  MO_NAV,  MS_ENT, XXXXXXX,                   XXXXXXX,  KC_SPC,  MO_SYM, NUM_TAB, XXXXXXX
     //                           └────────┴────────┴────────┴────────┴────────┘                 └────────┴────────┴────────┴────────┴────────┘
     ),
 
@@ -29,7 +29,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┬────────┐                 ┌────────┬────────┼────────┼────────┼────────┼────────┼────────┼────────┤
         XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
     //└────────┴────────┴────────┼────────┼────────┼────────┼────────┼────────┤                 ├────────┼────────┼────────┼────────┼────────┼────────┴────────┴────────┘
-                                   XXXXXXX, KC_BSPC,  MO_NAV,  MS_ENT, XXXXXXX,                   XXXXXXX,  KC_SPC,  MO_SYM, MF_TAB, XXXXXXX
+                                   XXXXXXX, KC_BSPC,  MO_NAV,  MS_ENT, XXXXXXX,                   XXXXXXX,  KC_SPC,  MO_SYM, NUM_TAB, XXXXXXX
     //                           └────────┴────────┴────────┴────────┴────────┘                 └────────┴────────┴────────┴────────┴────────┘
     ),
 
@@ -144,7 +144,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(_MOUSE, layer_state_cmp(state, _MOUSE));
     rgblight_set_layer_state(_MEDIA_FN, layer_state_cmp(state, _MEDIA_FN));
 
-    return update_tri_layer_state(state, _SYM, _NAV, _NUM);
+    return update_tri_layer_state(state, _SYM, _NAV, _MEDIA_FN);
 }
 
 // OLED display manipulation
