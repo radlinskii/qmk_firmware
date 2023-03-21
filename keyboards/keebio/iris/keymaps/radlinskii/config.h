@@ -7,6 +7,7 @@
 #define EE_HANDS
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define TAPPING_TOGGLE 1 // tap just once for TT() to toggle the layer
 #define TAPPING_TERM 200
 
@@ -35,6 +36,8 @@
 #undef RGBLIGHT_EFFECT_ALTERNATING
 #undef RGBLIGHT_EFFECT_TWINKLE
 
+=======
+>>>>>>> 3d43489cb5 (remove light layers from iris)
 #define TAPPING_TERM 180
 #define TAPPING_TERM_PER_KEY
 #define IGNORE_MOD_TAP_INTERRUPT
