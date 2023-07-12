@@ -3,7 +3,7 @@
 
 #include QMK_KEYBOARD_H
 #include "layer_names.h"
-#include "keycodes.h"
+#include "custom_keycodes.h"
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -23,13 +23,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = LAYOUT(
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                            XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+         KC_ESC,   KC_1,     KC_2,    KC_3,    KC_4,    KC_5,                               KC_6,    KC_7,    KC_8,    KC_9,    KC_0,  KC_GRV,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-        XXXXXXX, XXXXXXX,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O, XXXXXXX, XXXXXXX,
+         KC_TAB,    KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P, KC_BSPC,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-       TD(Q_ES), LALT_KA, LCTL_KS, LGUI_KD, LSFT_KF,    KC_G,                               KC_H, RSFT_KJ, RGUI_KK, RCTL_KL, RA_SCLN,    KC_P,
+        KC_LCTL, LALT_KA, LCTL_KS, LGUI_KD, LSFT_KF,    KC_G,                               KC_H, RSFT_KJ, RGUI_KK, RCTL_KL, RA_SCLN, KC_QUOT,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-        XXXXXXX,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B, XXXXXXX,          XXXXXXX,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, XXXXXXX,
+        KC_LSFT,    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,  KC_DEL,           KC_ESC,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH, KC_RSFT,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
                                        KC_BSPC,  MO_NAV,  MS_ENT,                    KC_SPC,  MO_SYM, NUM_TAB
     //                               └────────┴────────┴────────┘                 └────────┴────────┴────────┘
@@ -39,9 +39,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
        _______, _______, _______, _______, _______, _______,                             _______, _______, _______, _______, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-        _______, _______,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, _______, _______,
+        _______, KC_EXLM,   KC_AT, KC_HASH,  KC_DLR, KC_PERC,                            KC_CIRC, KC_AMPR, KC_ASTR, KC_PIPE, KC_BSLS, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-        KC_EXLM, KC_LALT, KC_LCTL, LGU_GRV,  LSF_QT,  KC_DQT,                            KC_UNDS, RSF_MIN, RGU_EQL, KC_RCTL, KC_RALT, KC_BSLS,
+        _______, KC_LALT, KC_LCTL, LGU_GRV,  LSF_QT,  KC_DQT,                            KC_UNDS, RSF_MIN, RGU_EQL, KC_RCTL, KC_RALT, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
         _______, KC_LABK, KC_LPRN, KC_LCBR, KC_LBRC,KC_TILDE, _______,          _______, KC_PLUS, KC_RBRC, KC_RCBR, KC_RPRN, KC_RABK, _______,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
@@ -95,9 +95,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //┌────────┬────────┬────────┬────────┬────────┬────────┐                          ┌────────┬────────┬────────┬────────┬────────┬────────┐
         _______, _______, _______, _______, _______, _______,                            _______, _______, _______, _______, _______, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-        _______, _______,   KC_F6,   KC_F5,   KC_F4,K_QWERTY,                          K_COLEMAK, RGB_MOD,RGB_RMOD, _______, _______, _______,
+        _______, KC_CAPS,   KC_F6,   KC_F5,   KC_F4,K_QWERTY,                          K_COLEMAK, RGB_MOD,RGB_RMOD, _______, KC_CAPP, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┤                          ├────────┼────────┼────────┼────────┼────────┼────────┤
-        KC_CAPS,  KC_F11,   KC_F3,   KC_F2,   KC_F1,  KC_F10,                            RGB_HUI, KC_BRIU, KC_VOLU, KC_MNXT, KC_MPLY, KC_CAPP,
+        _______,  KC_F11,   KC_F3,   KC_F2,   KC_F1,  KC_F10,                            RGB_HUI, KC_BRIU, KC_VOLU, KC_MNXT, KC_MPLY, _______,
     //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
         _______,  KC_F12,   KC_F9,   KC_F8,   KC_F7, _______, _______,          _______, RGB_HUD, KC_BRID, KC_VOLD, KC_MPRV, KC_MUTE, _______,
     //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
