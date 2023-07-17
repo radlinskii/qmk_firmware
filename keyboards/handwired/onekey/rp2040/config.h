@@ -28,3 +28,6 @@
 #define SPI_SCK_PIN GP18
 #define SPI_MOSI_PIN GP19
 #define SPI_MISO_PIN GP20
+
+#define BACKLIGHT_DRIVER = pwm
+#define BACKLIGHT_PIN GP25
