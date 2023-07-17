@@ -5,6 +5,13 @@
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {LAYOUT_ortho_1x1(KC_D)};
 
+void matrix_init_user(void) {
+    #ifdef BACKLIGHT_ENABLE
+        backlight_enable();
+        backlight_level(3);
+    #endif
+}
+
 bool encoder_update_user(uint8_t index, bool clockwise) {
     if (index == 0) {
         if (clockwise) {
