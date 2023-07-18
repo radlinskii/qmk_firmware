@@ -38,6 +38,9 @@ enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY };
 #define LSF_QT LSFT_T(KC_QUOT)
 #define RSF_MIN RSFT_T(KC_MINS)
 #define RGU_EQL RGUI_T(KC_EQL)
+#define RCT_COM RCTL_T(KC_COMM)
+#define RAL_DOT RALT_T(KC_DOT)
+
 
 // MISC
 #define KC_CAPW LGUI(LSFT(KC_3)) // capture the whole screen on MacOS
