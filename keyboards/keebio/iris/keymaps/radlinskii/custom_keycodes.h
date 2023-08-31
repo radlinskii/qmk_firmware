@@ -50,12 +50,3 @@ enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY };
 #define MO_NAV MO(_NAV)
 #define MS_ENT LT(_MOUSE, KC_ENT)
 #define NUM_TAB LT(_NUM, KC_TAB)
-
-// Tap Dance Declarations
-enum { Q_ES = 0 };
-
-// Tap Dance Definitions
-tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Q, twice Escape
-    [Q_ES] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC),
-};
