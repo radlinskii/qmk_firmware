@@ -107,17 +107,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 // clang-format on
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case TD(Q_ES):
-            return TAPPING_TERM + 150;
-        default:
-            return TAPPING_TERM;
-    }
-}
 
 // switching default layer between COLEMAK and QWERTY
-
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case K_COLEMAK:
@@ -136,6 +127,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+// tri-layer feature for switching to _MEDIA_FN layer
 layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _SYM, _NAV, _MEDIA_FN);
 }
