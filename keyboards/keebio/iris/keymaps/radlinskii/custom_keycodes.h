@@ -11,7 +11,9 @@ enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY };
 #define RSFT_KN RSFT_T(KC_N)
 #define RGUI_KE RGUI_T(KC_E)
 #define RCTL_KI RCTL_T(KC_I)
-#define RALT_KO RALT_T(KC_O)
+#define LALT_KO LALT_T(KC_O) // LALT instead of RALT
+#define RALT_KG RALT_T(KC_G)
+#define RALT_KM RALT_T(KC_M)
 
 // QWERTY
 // #define LALT_KA LALT_T(KC_A) // already defined in COLEMAK setup
@@ -21,7 +23,9 @@ enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY };
 #define RSFT_KJ RSFT_T(KC_J)
 #define RGUI_KK RGUI_T(KC_K)
 #define RCTL_KL RCTL_T(KC_L)
-#define RA_SCLN RALT_T(KC_SCLN)
+#define LA_SCLN LALT_T(KC_SCLN) // LALT instead of RALT
+#define RALT_KG RALT_T(KC_G)
+#define RALT_KH RALT_T(KC_H)
 
 // NUM
 #define LALT_K1 LALT_T(KC_1)
