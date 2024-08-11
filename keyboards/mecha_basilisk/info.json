@@ -1,6 +1,6 @@
 {
     "manufacturer": "radlinskii",
-    "keyboard_name": "mecha_basilisk",
+    "keyboard_name": "mechabasilisk",
     "maintainer": "radlinskii",
     "bootloader": "rp2040",
     "diode_direction": "COL2ROW",
