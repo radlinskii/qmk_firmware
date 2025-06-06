@@ -4,32 +4,38 @@
 enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY };
 
 // COLEMAK
+// left hand
 #define LALT_KA LALT_T(KC_A)
 #define LCTL_KR LCTL_T(KC_R)
 #define LGUI_KS LGUI_T(KC_S)
 #define LSFT_KT LSFT_T(KC_T)
+#define RALT_KG RALT_T(KC_G) // to have RALT on both hands
+// right hand
+#define RALT_KM RALT_T(KC_M)
 #define RSFT_KN RSFT_T(KC_N)
 #define RGUI_KE RGUI_T(KC_E)
 #define RCTL_KI RCTL_T(KC_I)
 #define LALT_KO LALT_T(KC_O) // LALT instead of RALT
-#define RALT_KG RALT_T(KC_G)
-#define RALT_KM RALT_T(KC_M)
 
 // QWERTY
+// left hand
 // #define LALT_KA LALT_T(KC_A) // already defined in COLEMAK setup
 #define LCTL_KS LCTL_T(KC_S)
 #define LGUI_KD LGUI_T(KC_D)
 #define LSFT_KF LSFT_T(KC_F)
+#define RALT_KG RALT_T(KC_G)
+// right hand
+#define RALT_KH RALT_T(KC_H)
 #define RSFT_KJ RSFT_T(KC_J)
 #define RGUI_KK RGUI_T(KC_K)
 #define RCTL_KL RCTL_T(KC_L)
 #define LA_SCLN LALT_T(KC_SCLN) // LALT instead of RALT
-#define RALT_KG RALT_T(KC_G)
-#define RALT_KH RALT_T(KC_H)
 
 // SYM
+// left hand
 #define LGU_GRV LGUI_T(KC_GRV)
 #define LSF_QT LSFT_T(KC_QUOT)
+// right hand
 #define RSF_MIN RSFT_T(KC_MINS)
 #define RGU_EQL RGUI_T(KC_EQL)
 
