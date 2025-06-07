@@ -5,4 +5,4 @@
 
 #define TAPPING_TERM 180
 
-#define MOUSEKEY_MAX_SPEED 8
+#define MOUSEKEY_MAX_SPEED 10
