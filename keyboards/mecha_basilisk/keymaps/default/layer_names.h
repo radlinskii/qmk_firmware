@@ -6,9 +6,9 @@
 enum my_layers {
     _COLEMAK,
     _QWERTY,
-    _SYM,
     _NAV,
-    _NUM,
     _MOUSE,
+    _NUM,
+    _SYM,
     _MEDIA_FN,
 };
