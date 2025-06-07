@@ -54,4 +54,12 @@
             "url": "./data/schemas/keymap.jsonschema"
         }
     ]
+    "git.autoRepositoryDetection": false,
+    "editor.wordWrap": "off",
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#000000",
+        "titleBar.activeForeground": "#ffffff",
+        "titleBar.inactiveBackground": "#000000",
+        "titleBar.inactiveForeground": "#ffffff"
+    }
 }
