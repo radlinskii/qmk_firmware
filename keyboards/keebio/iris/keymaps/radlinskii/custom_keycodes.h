@@ -1,7 +1,7 @@
 // Copyright 2022 Ignacy Radliński (@radlinskii)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY };
+enum custom_keycodes { K_COLEMAK = SAFE_RANGE, K_QWERTY, ALT_TAB_TOGGLE };
 
 // COLEMAK
 #define LALT_KA LALT_T(KC_A)

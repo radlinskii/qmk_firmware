@@ -6,6 +6,9 @@
 #include "layer_names.h"
 #include "oled.h"
 
+bool alt_tab_enabled = false;
+uint16_t alt_tab_timer = 0;
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT(
@@ -81,15 +84,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_MEDIA_FN] = LAYOUT(
-    //┌────────┬────────┬────────┬────────┬────────┬────────┐                                                     ┌────────┬────────┬────────┬────────┬────────┬────────┐
-        XXXXXXX, KC_CAPS,   KC_F6,   KC_F5,   KC_F4,  EE_CLR,                                                       _______, _______, _______, _______, _______, XXXXXXX,
-    //├────────┼────────┼────────┼────────┼────────┼────────┤                                                     ├────────┼────────┼────────┼────────┼────────┼────────┤
-        XXXXXXX,  KC_F11,   KC_F3,   KC_F2,   KC_F1,  KC_F10,                                                     K_COLEMAK, KC_BRIU, KC_VOLU, KC_MNXT, KC_MPLY, XXXXXXX,
-    //├────────┼────────┼────────┼────────┼────────┼────────┼────────┬────────┐                 ┌────────┬────────┼────────┼────────┼────────┼────────┼────────┼────────┤
-        XXXXXXX,  KC_F12,   KC_F9,   KC_F8,   KC_F7, QK_BOOT, _______, _______,                   _______, _______,K_QWERTY, KC_BRID, KC_VOLD, KC_MPRV, KC_MUTE, XXXXXXX,
-    //└────────┴────────┴────────┼────────┼────────┼────────┼────────┼────────┤                 ├────────┼────────┼────────┼────────┼────────┼────────┴────────┴────────┘
-                                   _______, _______, _______, _______, _______,                   _______, _______, _______, _______, _______
-    //                           └────────┴────────┴────────┴────────┴────────┘                 └────────┴────────┴────────┴────────┴────────┘
+    //┌────────┬────────┬────────┬────────┬────────┬────────┐                                                     ┌────────┬───────────────┬────────┬────────┬────────┬────────┐
+        XXXXXXX, KC_CAPS,   KC_F6,   KC_F5,   KC_F4,  EE_CLR,                                                       _______,        _______, _______, _______, _______, XXXXXXX,
+    //├────────┼────────┼────────┼────────┼────────┼────────┤                                                     ├────────┼───────────────┼────────┼────────┼────────┼────────┤
+        XXXXXXX,  KC_F11,   KC_F3,   KC_F2,   KC_F1,  KC_F10,                                                     K_COLEMAK,        KC_BRIU, KC_VOLU, KC_MNXT, KC_MPLY, XXXXXXX,
+    //├────────┼────────┼────────┼────────┼────────┼────────┼────────┬────────┐                 ┌────────┬────────┼────────┼───────────────┼────────┼────────┼────────┼────────┤
+        XXXXXXX,  KC_F12,   KC_F9,   KC_F8,   KC_F7, QK_BOOT, _______, _______,                   _______, _______,K_QWERTY,        KC_BRID, KC_VOLD, KC_MPRV, KC_MUTE, XXXXXXX,
+    //└────────┴────────┴────────┼────────┼────────┼────────┼────────┼────────┤                 ├────────┼────────┼────────┼───────────────┼────────┼────────┴────────┴────────┘
+                                   _______, _______, _______, _______, _______,                   _______, _______, _______, ALT_TAB_TOGGLE, _______
+    //                           └────────┴────────┴────────┴────────┴────────┘                 └────────┴────────┴────────┴───────────────┴────────┘
     )
 };
 // clang-format on
@@ -107,6 +110,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             if (record->event.pressed) {
                 set_single_persistent_default_layer(_QWERTY);
                 layer_move(_QWERTY);
+            }
+            return false;
+        case ALT_TAB_TOGGLE:
+            if (record->event.pressed) {
+                alt_tab_enabled = !alt_tab_enabled;
+                alt_tab_timer = timer_read();
             }
             return false;
     }
@@ -132,4 +141,12 @@ bool oled_task_user(void) {
     };
 
     return false;
+}
+
+
+void matrix_scan_user(void) {
+    if (alt_tab_enabled && timer_elapsed(alt_tab_timer) > 10000) { // 10 seconds
+        tap_code16(LALT(KC_TAB));
+        alt_tab_timer = timer_read();
+    }
 }

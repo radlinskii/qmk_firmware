@@ -5,6 +5,9 @@
 #include "custom_keycodes.h"
 #include "layer_names.h"
 
+bool alt_tab_enabled = false;
+uint16_t alt_tab_timer = 0;
+
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_COLEMAK] = LAYOUT(
@@ -87,8 +90,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     //├────────┼────────┼────────┼────────┼────────┤                                                     ├────────┼────────┼────────┼────────┼────────┤
          KC_F12,   KC_F9,   KC_F8,   KC_F7, QK_BOOT,                                                      K_QWERTY, KC_BRID, KC_VOLD, KC_MPRV, KC_MUTE,
     //└────────┴────────┼────────┼────────┼────────┼────────┐                                   ┌────────┼────────┼────────┼────────┴────────┴────────┘
-                                   _______, _______, _______,                                     _______, _______, _______
-    //                           └────────┴────────┴────────┘                                   └────────┴────────┴────────┘
+                                   _______, _______, _______,                                     _______, _______, ALT_TAB_TOGGLE
+    //                           └────────┴────────┴────────┘                                   └────────┴────────┴───────────────┘
     )
 };
 // clang-format on
@@ -109,6 +112,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
                 layer_move(_QWERTY);
             }
             return false;
+        case ALT_TAB_TOGGLE:
+            if (record->event.pressed) {
+                alt_tab_enabled = !alt_tab_enabled;
+                alt_tab_timer = timer_read();
+            }
+            return false;
     }
     return true;
 }
@@ -118,3 +127,9 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return update_tri_layer_state(state, _SYM, _NAV, _MEDIA_FN);
 }
 
+void matrix_scan_user(void) {
+    if (alt_tab_enabled && timer_elapsed(alt_tab_timer) > 10000) { // 10 seconds
+        tap_code16(LALT(KC_TAB));
+        alt_tab_timer = timer_read();
+    }
+}
